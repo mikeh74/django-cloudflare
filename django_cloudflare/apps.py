@@ -10,6 +10,10 @@ class DjangoCloudflareConfig(AppConfig):
     verbose_name = "Django Cloudflare"
 
     def ready(self):
-        """Import signals when the app is ready."""
-        # Import signals to register them
-        from django_cloudflare import signals  # noqa: F401
+        """
+        Import signals when the app is ready.
+
+        The signals module registers Django signal handlers for automatic
+        cache purging. This import is for side effects only.
+        """
+        from django_cloudflare import signals as _signals  # noqa: F401

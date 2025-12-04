@@ -117,6 +117,11 @@ class PurgeService:
 
         Args:
             urls: List of URLs to purge.
+
+        Note:
+            The timer thread is marked as daemon=True to prevent it from
+            blocking application shutdown. This means pending purges may
+            be lost during shutdown, which is acceptable for cache purging.
         """
         with self._lock:
             self._pending_urls.update(urls)

@@ -6,5 +6,3 @@ to trigger automatic selective cache purging when content changes.
 """
 
 __version__ = "0.1.0"
-
-default_app_config = "django_cloudflare.apps.DjangoCloudflareConfig"
